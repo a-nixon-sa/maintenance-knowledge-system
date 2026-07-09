@@ -8,6 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const buttons = document.querySelectorAll(".nav-button");
     const menuButton = document.querySelector(".menu-toggle");
     const sidebar = document.querySelector(".sidebar");
+
+   const technicianInput = document.getElementById("technician");
+
+const dateInput = document.getElementById("pmDate");
+
+const shiftInput = document.getElementById("shift");
+
+const notesInput = document.getElementById("notes");
+
+const historyTimeline = document.getElementById("historyTimeline");
+   
     const sections = document.querySelectorAll(".content-section");
 
     buttons.forEach(button => {
@@ -45,33 +56,45 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     });
-     /* =====================================
-       Save PM Demo
-    ===================================== */
 
-    const saveButton = document.querySelector(".save-button");
+   /* =====================================
+   Save PM Record
+===================================== */
 
-    if (saveButton) {
+const saveButton = document.getElementById("savePM");
 
-        saveButton.addEventListener("click", function () {
+if (saveButton) {
 
-            this.innerHTML =
-                '<i class="fa-solid fa-circle-check"></i> PM Record Saved';
+    saveButton.addEventListener("click", function () {
 
-            this.style.background = "#22C55E";
+        const record = {
 
-            setTimeout(() => {
+            technician: technicianInput.value,
 
-                this.innerHTML =
-                    '<i class="fa-solid fa-floppy-disk"></i> Save PM Record';
+            date: dateInput.value,
 
-                this.style.background = "";
+            shift: shiftInput.value,
 
-            }, 2500);
+            notes: notesInput.value
 
-        });
+        };
 
-    }   
+        let history =
+            JSON.parse(localStorage.getItem("pmHistory")) || [];
+
+        history.unshift(record);
+
+        localStorage.setItem(
+            "pmHistory",
+            JSON.stringify(history)
+        );
+
+        alert("PM Record Saved!");
+
+    });
+
+}
+
         /* =====================================
        Prevent form submission (Demo)
     ===================================== */
