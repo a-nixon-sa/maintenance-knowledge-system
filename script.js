@@ -6,7 +6,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const buttons = document.querySelectorAll(".nav-button");
-
+    const menuButton = document.querySelector(".menu-toggle");
+    const sidebar = document.querySelector(".sidebar");
     const sections = document.querySelectorAll(".content-section");
 
     buttons.forEach(button => {
@@ -86,5 +87,33 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
+
+       /* =====================================
+       Mobile Menu
+    ===================================== */
+
+    if (menuButton) {
+
+        menuButton.addEventListener("click", function () {
+
+            sidebar.classList.toggle("open");
+
+        });
+
+    }
+
+    buttons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            if (window.innerWidth <= 768) {
+
+                sidebar.classList.remove("open");
+
+            }
+
+        });
+
+     });
 
 });
