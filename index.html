@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MaintLink | Digital Maintenance Knowledge System</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- ===================================== -->
+    <!-- SIDEBAR -->
+    <!-- ===================================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <i class="fa-solid fa-industry"></i>
+
+            <h1>MaintLink</h1>
+
+            <p>Digital Maintenance Knowledge System</p>
+
+        </div>
+
+        <nav>
+
+            <button class="nav-button active"
+                    data-section="dashboard">
+
+                <i class="fa-solid fa-gauge-high"></i>
+
+                Dashboard
+
+            </button>
+
+            <button class="nav-button"
+                    data-section="overview">
+
+                <i class="fa-solid fa-box"></i>
+
+                Equipment Overview
+
+            </button>
+
+            <button class="nav-button"
+                    data-section="history">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                Maintenance History
+
+            </button>
+
+            <button class="nav-button"
+                    data-section="pm">
+
+                <i class="fa-solid fa-list-check"></i>
+
+                Preventive Maintenance
+
+            </button>
+
+            <button class="nav-button"
+                    data-section="health">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+                Equipment Health
+
+            </button>
+
+            <button class="nav-button"
+                    data-section="documents">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                Documents
+
+            </button>
+
+            <button class="nav-button"
+                    data-section="lessons">
+
+                <i class="fa-solid fa-lightbulb"></i>
+
+                Lessons Learned
+
+            </button>
+
+            <button class="nav-button"
+                    data-section="future">
+
+                <i class="fa-solid fa-rocket"></i>
+
+                Future Improvements
+
+            </button>
+
+        </nav>
+
+      <div class="equipment-summary">
+
+    <h3>Equipment Snapshot</h3>
+
+    <div class="summary-item">
+        <span>Asset</span>
+        <strong>PL2-PAL-001</strong>
+    </div>
+
+    <div class="summary-item">
+        <span>Status</span>
+        <strong class="running">Running</strong>
+    </div>
+
+    <div class="summary-item">
+        <span>Health</span>
+        <strong class="health">92%</strong>
+    </div>
+
+    <div class="summary-item">
+        <span>Criticality</span>
+        <strong>High</strong>
+    </div>
+
+    <div class="summary-item">
+        <span>Open WOs</span>
+        <strong>2</strong>
+    </div>
+
+</div>  
+
+    </aside>
+
+    <!-- ===================================== -->
+    <!-- MAIN CONTENT -->
+    <!-- ===================================== -->
+
+    <main class="main-content">
+
+        <!-- ===================================== -->
+        <!-- TOP BAR -->
+        <!-- ===================================== -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>PALLETIZER-01</h2>
+
+                <p>Packaging Line 2 • Dairy Plant</p>
+
+            </div>
+
+            <div class="machine-status">
+
+                <span class="status-indicator"></span>
+
+                Running Normally
+
+            </div>
+
+        </header>
+
+        <!-- ===================================== -->
+        <!-- KPI DASHBOARD -->
+        <!-- ===================================== -->
+
+        <section id="dashboard" class="content-section active-section">
+
+            <h2>Machine Dashboard</h2>
+
+            <div class="kpi-grid">
+
+                <div class="kpi-card">
+
+                    <i class="fa-solid fa-heart-pulse"></i>
+
+                    <h3>Equipment Health</h3>
+
+                    <div class="kpi-value health-score">
+
+                        92%
+
+                    </div>
+
+                    <p>Overall Machine Health</p>
+
+                </div>
+
+                <div class="kpi-card">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    <h3>PM Compliance</h3>
+
+                    <div class="kpi-value">
+
+                        98%
+
+                    </div>
+
+                    <p>Preventive Maintenance Completion</p>
+
+                </div>
+
+                <div class="kpi-card">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <h3>MTBF</h3>
+
+                    <div class="kpi-value">
+
+                        148
+
+                    </div>
+
+                    <p>Days Between Failures</p>
+
+                </div>
+
+                <div class="kpi-card">
+
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                    <h3>Open Work Orders</h3>
+
+                    <div class="kpi-value">
+
+                        2
+
+                    </div>
+
+                    <p>Currently Assigned</p>
+
+                </div>
+
+            </div>
+
+            <!-- ===================================== -->
+            <!-- QUICK SUMMARY -->
+            <!-- ===================================== -->
+
+            <div class="summary-card">
+
+                <h3>
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    Machine Summary
+
+                </h3>
+
+                <p>
+
+                    This palletizer is currently operating within expected
+                    performance parameters. Preventive maintenance compliance
+                    remains above target, and no critical failures have occurred
+                    in the last 148 days.
+
+                </p>
+
+                <br>
+
+                <p>
+
+                    The equipment health score is calculated using maintenance
+                    history, recurring failures, downtime, completed PMs, and
+                    inspection findings.
+
+                </p>
+
+            </div>
+
+            <!-- ===================================== -->
+            <!-- QUICK ACTIONS -->
+            <!-- ===================================== -->
+
+            <div class="action-grid">
+
+                <div class="action-card">
+
+                    <i class="fa-solid fa-qrcode"></i>
+
+                    <h3>QR Code Access</h3>
+
+                    <p>
+
+                        Mechanics scan the QR code attached to the palletizer to
+                        instantly access maintenance records and standardized
+                        procedures.
+
+                    </p>
+
+                </div>
+
+                <div class="action-card">
+
+                    <i class="fa-solid fa-book"></i>
+
+                    <h3>Knowledge Retention</h3>
+
+                    <p>
+
+                        Every repair, lesson learned, and improvement is stored
+                        digitally so future mechanics benefit from previous
+                        experience.
+
+                    </p>
+
+                </div>
+
+                <div class="action-card">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <h3>Predictive Maintenance</h3>
+
+                    <p>
+
+                        Equipment health scores identify machines requiring
+                        additional attention before failures impact production.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===================================== -->
+        <!-- EQUIPMENT OVERVIEW -->
+        <!-- ===================================== -->
+
+        <section id="overview" class="content-section">
+
+            <h2>Equipment Overview</h2>
+
+            <div class="overview-grid">
+
+                <div class="info-card">
+                    <h3>Equipment ID</h3>
+                    <p>PL2-PAL-001</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Equipment</h3>
+                    <p>Robotic Palletizer</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Location</h3>
+                    <p>Packaging Line 2</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Criticality</h3>
+                    <p class="critical">High</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Manufacturer</h3>
+                    <p>OEM Confidential</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Installed</h3>
+                    <p>2021</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Last Preventive Maintenance</h3>
+                    <p>June 28, 2026</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Next Scheduled PM</h3>
+                    <p>July 28, 2026</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===================================== -->
+        <!-- MAINTENANCE HISTORY -->
+        <!-- ===================================== -->
+
+        <section id="history" class="content-section">
+
+            <h2>Maintenance History</h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <div class="timeline-date">
+                        June 28, 2026
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>Photoeye Detection Failure</h3>
+
+                        <p><strong>Symptom:</strong> Cases intermittently failed to register before entering the palletizer.</p>
+
+                        <p><strong>Root Cause:</strong> Dust accumulation on photoeye lens reduced detection accuracy.</p>
+
+                        <p><strong>Corrective Action:</strong> Cleaned sensor, verified alignment, and added lens cleaning to PM checklist.</p>
+
+                        <p><strong>Result:</strong> No repeat failures reported.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="timeline-item">
+
+                    <div class="timeline-date">
+                        April 17, 2026
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>Discharge Conveyor Shutdown</h3>
+
+                        <p><strong>Symptom:</strong> Conveyor unexpectedly stopped during pallet discharge.</p>
+
+                        <p><strong>Root Cause:</strong> Loose motor terminal inside electrical enclosure.</p>
+
+                        <p><strong>Corrective Action:</strong> Retorqued terminals and added annual torque verification to PM.</p>
+
+                        <p><strong>Result:</strong> Electrical fault eliminated.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="timeline-item">
+
+                    <div class="timeline-date">
+                        January 5, 2026
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>Excessive Mechanical Vibration</h3>
+
+                        <p><strong>Symptom:</strong> Vibration increased during pallet stacking.</p>
+
+                        <p><strong>Root Cause:</strong> Drive chain tension outside manufacturer specification.</p>
+
+                        <p><strong>Corrective Action:</strong> Chain adjusted and monthly inspection interval added.</p>
+
+                        <p><strong>Result:</strong> Vibration returned to acceptable range.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===================================== -->
+        <!-- PREVENTIVE MAINTENANCE -->
+        <!-- ===================================== -->
+
+        <section id="pm" class="content-section">
+
+            <h2>Preventive Maintenance Checklist</h2>
+
+            <div class="pm-form">
+
+                <div class="pm-header">
+
+                    <div>
+
+                        <label>Technician</label>
+
+                        <input type="text"
+                               placeholder="Enter technician name">
+
+                    </div>
+
+                    <div>
+
+                        <label>Date</label>
+
+                        <input type="date">
+
+                    </div>
+
+                    <div>
+
+                        <label>Shift</label>
+
+                        <select>
+
+                            <option>Day Shift</option>
+                            <option>Night Shift</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <h3>Safety Verification</h3>
+
+                <div class="check-grid">
+
+                    <label><input type="checkbox"> Lock Out / Tag Out Verified</label>
+
+                    <label><input type="checkbox"> Zero Energy State Confirmed</label>
+
+                    <label><input type="checkbox"> PPE Worn</label>
+
+                </div>
+
+                <h3>Mechanical Inspection</h3>
+
+                <div class="check-grid">
+
+                    <label><input type="checkbox"> Inspect Drive Chain</label>
+
+                    <label><input type="checkbox"> Inspect Bearings</label>
+
+                    <label><input type="checkbox"> Inspect Rollers</label>
+
+                    <label><input type="checkbox"> Verify Chain Tension</label>
+
+                    <label><input type="checkbox"> Inspect Guides</label>
+
+                    <label><input type="checkbox"> Inspect Gearbox</label>
+
+                </div>
+
+                <h3>Electrical Inspection</h3>
+
+                <div class="check-grid">
+
+                    <label><input type="checkbox"> Verify Photoeyes</label>
+
+                    <label><input type="checkbox"> Inspect Wiring</label>
+
+                    <label><input type="checkbox"> Inspect Safety Circuit</label>
+
+                    <label><input type="checkbox"> Check Motor Connections</label>
+
+                </div>      
+
+                                <h3>Pneumatic Inspection</h3>
+
+                <div class="check-grid">
+
+                    <label><input type="checkbox"> Inspect Air Cylinders</label>
+
+                    <label><input type="checkbox"> Check Air Pressure</label>
+
+                    <label><input type="checkbox"> Inspect Air Hoses</label>
+
+                    <label><input type="checkbox"> Inspect Solenoid Valves</label>
+
+                </div>
+
+                <h3>Lubrication</h3>
+
+                <div class="check-grid">
+
+                    <label><input type="checkbox"> Lubricate Drive Chain</label>
+
+                    <label><input type="checkbox"> Lubricate Bearings</label>
+
+                    <label><input type="checkbox"> Verify Gearbox Oil Level</label>
+
+                </div>
+
+                <h3>Technician Notes</h3>
+
+                <textarea rows="6"
+                    placeholder="Enter inspection notes, observations, or recommended repairs..."></textarea>
+
+                <br><br>
+
+                <button class="save-button">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save PM Record
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ===================================== -->
+        <!-- EQUIPMENT HEALTH -->
+        <!-- ===================================== -->
+
+        <section id="health" class="content-section">
+
+            <h2>Equipment Health Dashboard</h2>
+
+            <div class="health-grid">
+
+                <div class="health-card">
+
+                    <h3>Overall Health</h3>
+
+                    <div class="health-circle">
+
+                        92%
+
+                    </div>
+
+                    <p>Machine Operating Normally</p>
+
+                </div>
+
+                <div class="health-card">
+
+                    <h3>Key Performance Indicators</h3>
+
+                    <ul class="health-list">
+
+                        <li>PM Compliance <strong>98%</strong></li>
+
+                        <li>Downtime This Month <strong>2.3 hrs</strong></li>
+
+                        <li>Open Work Orders <strong>2</strong></li>
+
+                        <li>MTBF <strong>148 Days</strong></li>
+
+                        <li>Predicted Risk <strong>LOW</strong></li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===================================== -->
+        <!-- DOCUMENTS -->
+        <!-- ===================================== -->
+
+        <section id="documents" class="content-section">
+
+            <h2>Machine Documents</h2>
+
+            <div class="document-grid">
+
+                <div class="document-card">
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    <h3>PM Procedure</h3>
+
+                    <p>Monthly Preventive Maintenance Procedure</p>
+
+                </div>
+
+                <div class="document-card">
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    <h3>Electrical Drawings</h3>
+
+                    <p>Motor Control & Wiring Diagrams</p>
+
+                </div>
+
+                <div class="document-card">
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    <h3>Operator SOP</h3>
+
+                    <p>Standard Operating Procedure</p>
+
+                </div>
+
+                <div class="document-card">
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    <h3>Lubrication Guide</h3>
+
+                    <p>Recommended Lubrication Schedule</p>
+
+                </div>
+
+                <div class="document-card">
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    <h3>Parts Catalog</h3>
+
+                    <p>Replacement Parts Reference</p>
+
+                </div>
+
+                <div class="document-card">
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    <h3>LOTO Procedure</h3>
+
+                    <p>Lock Out / Tag Out Instructions</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===================================== -->
+        <!-- LESSONS LEARNED -->
+        <!-- ===================================== -->
+
+        <section id="lessons" class="content-section">
+
+            <h2>Lessons Learned</h2>
+
+            <div class="lesson-card">
+
+                <h3>Photoeye Reliability Improvement</h3>
+
+                <p><strong>Problem:</strong> Dust contamination caused intermittent case detection failures.</p>
+
+                <p><strong>Solution:</strong> Added lens cleaning to every monthly PM inspection.</p>
+
+                <p><strong>Status:</strong> Implemented into Standard PM Procedure ✓</p>
+
+            </div>
+
+            <div class="lesson-card">
+
+                <h3>Drive Chain Wear</h3>
+
+                <p><strong>Problem:</strong> Incorrect chain tension accelerated wear.</p>
+
+                <p><strong>Solution:</strong> Added monthly tension verification using manufacturer specifications.</p>
+
+                <p><strong>Status:</strong> Standardized ✓</p>
+
+            </div>
+
+            <div class="lesson-card">
+
+                <h3>Electrical Reliability</h3>
+
+                <p><strong>Problem:</strong> Loose motor terminals created unexpected downtime.</p>
+
+                <p><strong>Solution:</strong> Annual terminal torque verification added to PM checklist.</p>
+
+                <p><strong>Status:</strong> Implemented ✓</p>
+
+            </div>
+
+        </section>
+
+        <!-- ===================================== -->
+        <!-- FUTURE IMPROVEMENTS -->
+        <!-- ===================================== -->
+
+        <section id="future" class="content-section">
+
+            <h2>Future Improvements</h2>
+
+            <ul class="future-list">
+
+                <li>QR codes installed on all production equipment.</li>
+
+                <li>Integration with CMMS work orders.</li>
+
+                <li>Digital maintenance manuals with searchable content.</li>
+
+                <li>Equipment health analytics dashboard.</li>
+
+                <li>AI-assisted troubleshooting recommendations.</li>
+
+                <li>Predictive maintenance based on failure trends.</li>
+
+                <li>Technician mobile application.</li>
+
+                <li>Cloud-based maintenance knowledge database.</li>
+
+            </ul>
+
+            <div class="mission-box">
+
+                <h3>Project Vision</h3>
+
+                <p>
+
+                    The goal is not to replace mechanic experience—it is to
+                    preserve it, standardize it, and make it instantly available
+                    to every mechanic at the point of use through QR-enabled
+                    digital access.
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

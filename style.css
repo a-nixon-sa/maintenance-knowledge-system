@@ -1,0 +1,1222 @@
+/* ==========================================
+   MAINTLINK
+   DIGITAL MAINTENANCE KNOWLEDGE SYSTEM
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --background:#0F172A;
+    --sidebar:#111827;
+    --card:#1E293B;
+    --border:#334155;
+
+    --blue:#38BDF8;
+    --green:#22C55E;
+    --orange:#F59E0B;
+    --red:#EF4444;
+
+    --text:#F8FAFC;
+    --muted:#94A3B8;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    overflow:hidden;
+
+}
+
+/* ==========================================
+APP LAYOUT
+========================================== */
+
+.app-container{
+
+    display:flex;
+
+    height:100vh;
+
+}
+
+/* ==========================================
+SIDEBAR
+========================================== */
+
+.sidebar{
+
+    width:300px;
+
+    background:var(--sidebar);
+
+    border-right:1px solid var(--border);
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.brand{
+
+    padding:35px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.brand i{
+
+    font-size:55px;
+
+    color:var(--blue);
+
+    margin-bottom:20px;
+
+}
+
+.brand h1{
+
+    font-size:34px;
+
+    margin-bottom:8px;
+
+}
+
+.brand p{
+
+    color:var(--muted);
+
+    line-height:1.4;
+
+}
+
+/* ==========================================
+NAVIGATION
+========================================== */
+
+.sidebar nav{
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:20px;
+
+    gap:10px;
+
+}
+
+.nav-button{
+
+    border:none;
+
+    background:none;
+
+    color:var(--muted);
+
+    text-align:left;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+.nav-button i{
+
+    width:30px;
+
+    font-size:18px;
+
+}
+
+.nav-button:hover{
+
+    background:#1F2937;
+
+    color:white;
+
+}
+
+.nav-button.active{
+
+    background:var(--blue);
+
+    color:#00111F;
+
+    font-weight:700;
+
+}
+
+/* ==========================================
+MAIN CONTENT
+========================================== */
+
+.main-content{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:40px;
+
+}
+
+/* ==========================================
+TOP BAR
+========================================== */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.topbar h2{
+
+    font-size:40px;
+
+}
+
+.topbar p{
+
+    color:var(--muted);
+
+    margin-top:5px;
+
+}
+
+/* ==========================================
+STATUS
+========================================== */
+
+.machine-status{
+
+    background:#10271A;
+
+    color:var(--green);
+
+    padding:12px 22px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.status-indicator{
+
+    width:14px;
+
+    height:14px;
+
+    background:var(--green);
+
+    border-radius:50%;
+
+    box-shadow:0 0 12px var(--green);
+
+}
+/* ==========================================
+SECTIONS
+========================================== */
+
+.content-section{
+
+    display:none;
+
+    animation:fade .35s ease;
+
+}
+
+.active-section{
+
+    display:block;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+KPI CARDS
+========================================== */
+
+.kpi-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+
+    margin-top:25px;
+
+    margin-bottom:35px;
+
+}
+
+.kpi-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:28px;
+
+    transition:.25s;
+
+}
+
+.kpi-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--blue);
+
+}
+
+.kpi-card i{
+
+    font-size:34px;
+
+    color:var(--blue);
+
+    margin-bottom:18px;
+
+}
+
+.kpi-card h3{
+
+    margin-bottom:12px;
+
+    font-size:18px;
+
+}
+
+.kpi-value{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.health-score{
+
+    color:var(--green);
+
+}
+
+.kpi-card p{
+
+    color:var(--muted);
+
+}
+
+/* ==========================================
+SUMMARY
+========================================== */
+
+.summary-card{
+
+    background:var(--card);
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    padding:30px;
+
+    margin-bottom:35px;
+
+}
+
+.summary-card h3{
+
+    margin-bottom:20px;
+
+}
+
+.summary-card i{
+
+    color:var(--blue);
+
+    margin-right:10px;
+
+}
+
+.summary-card p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+/* ==========================================
+ACTION CARDS
+========================================== */
+
+.action-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+
+}
+
+.action-card{
+
+    background:var(--card);
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    padding:30px;
+
+    transition:.25s;
+
+}
+
+.action-card:hover{
+
+    border-color:var(--green);
+
+    transform:translateY(-5px);
+
+}
+
+.action-card i{
+
+    font-size:42px;
+
+    color:var(--green);
+
+    margin-bottom:18px;
+
+}
+
+.action-card h3{
+
+    margin-bottom:15px;
+
+}
+
+.action-card p{
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+}
+
+/* ==========================================
+OVERVIEW GRID
+========================================== */
+
+.overview-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:22px;
+
+}
+
+.info-card{
+
+    background:var(--card);
+
+    border-radius:16px;
+
+    border:1px solid var(--border);
+
+    padding:25px;
+
+}
+
+.info-card h3{
+
+    color:var(--muted);
+
+    margin-bottom:10px;
+
+    font-size:15px;
+
+}
+
+.info-card p{
+
+    font-size:24px;
+
+    font-weight:600;
+
+}
+
+.critical{
+
+    color:var(--orange);
+
+}
+/* ==========================================
+TIMELINE
+========================================== */
+
+.timeline{
+
+    position:relative;
+
+    margin-top:30px;
+
+    padding-left:35px;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:10px;
+
+    top:0;
+
+    bottom:0;
+
+    width:3px;
+
+    background:var(--blue);
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    margin-bottom:35px;
+
+}
+
+.timeline-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-32px;
+
+    top:6px;
+
+    width:18px;
+
+    height:18px;
+
+    background:var(--green);
+
+    border-radius:50%;
+
+    border:3px solid var(--background);
+
+}
+
+.timeline-date{
+
+    color:var(--blue);
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.timeline-content{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:25px;
+
+}
+
+.timeline-content h3{
+
+    margin-bottom:15px;
+
+}
+
+.timeline-content p{
+
+    margin-bottom:10px;
+
+    color:var(--muted);
+
+}
+
+/* ==========================================
+PM FORM
+========================================== */
+
+.pm-form{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:35px;
+
+}
+
+.pm-header{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+
+.pm-form label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+}
+
+.pm-form input,
+.pm-form select,
+.pm-form textarea{
+
+    width:100%;
+
+    background:#0F172A;
+
+    color:white;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    padding:14px;
+
+    font-size:15px;
+
+}
+
+.pm-form textarea{
+
+    resize:vertical;
+
+    min-height:140px;
+
+}
+
+.check-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:15px;
+
+    margin:20px 0 35px;
+
+}
+
+.check-grid label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:#162131;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+.check-grid input{
+
+    width:18px;
+
+    height:18px;
+
+}
+
+.save-button{
+
+    background:var(--blue);
+
+    color:#00111F;
+
+    border:none;
+
+    padding:16px 30px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.save-button:hover{
+
+    transform:translateY(-2px);
+
+    opacity:.9;
+
+}
+/* ==========================================
+HEALTH DASHBOARD
+========================================== */
+
+.health-grid{
+
+    display:grid;
+
+    grid-template-columns:350px 1fr;
+
+    gap:30px;
+
+    margin-top:30px;
+
+}
+
+.health-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:30px;
+
+}
+
+.health-card h3{
+
+    margin-bottom:25px;
+
+}
+
+.health-circle{
+
+    width:220px;
+
+    height:220px;
+
+    margin:20px auto;
+
+    border-radius:50%;
+
+    border:14px solid var(--green);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:54px;
+
+    font-weight:700;
+
+    color:var(--green);
+
+}
+
+.health-card p{
+
+    text-align:center;
+
+    color:var(--muted);
+
+}
+
+.health-list{
+
+    list-style:none;
+
+}
+
+.health-list li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:18px 0;
+
+    border-bottom:1px solid var(--border);
+
+    color:var(--muted);
+
+}
+
+.health-list strong{
+
+    color:white;
+
+}
+
+/* ==========================================
+DOCUMENTS
+========================================== */
+
+.document-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+
+    margin-top:30px;
+
+}
+
+.document-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:30px;
+
+    transition:.25s;
+
+    cursor:pointer;
+
+}
+
+.document-card:hover{
+
+    border-color:var(--blue);
+
+    transform:translateY(-5px);
+
+}
+
+.document-card i{
+
+    font-size:42px;
+
+    color:#EF4444;
+
+    margin-bottom:18px;
+
+}
+
+.document-card h3{
+
+    margin-bottom:12px;
+
+}
+
+.document-card p{
+
+    color:var(--muted);
+
+}
+
+/* ==========================================
+LESSONS LEARNED
+========================================== */
+
+.lesson-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-left:6px solid var(--green);
+
+    border-radius:16px;
+
+    padding:28px;
+
+    margin-bottom:25px;
+
+}
+
+.lesson-card h3{
+
+    margin-bottom:18px;
+
+}
+
+.lesson-card p{
+
+    margin-bottom:12px;
+
+    color:var(--muted);
+
+}
+
+/* ==========================================
+FUTURE IMPROVEMENTS
+========================================== */
+
+.future-list{
+
+    margin:25px 0 40px 25px;
+
+}
+
+.future-list li{
+
+    margin-bottom:18px;
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+}
+
+.mission-box{
+
+    background:linear-gradient(135deg,#1E293B,#0F172A);
+
+    border:1px solid var(--blue);
+
+    border-radius:20px;
+
+    padding:35px;
+
+}
+
+.mission-box h3{
+
+    margin-bottom:20px;
+
+}
+
+.mission-box p{
+
+    font-size:18px;
+
+    color:#CBD5E1;
+
+    line-height:1.8;
+
+}
+/* ==========================================
+BUTTONS & TRANSITIONS
+========================================== */
+
+button{
+
+    font-family:'Inter',sans-serif;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    outline:none;
+
+    border-color:var(--blue);
+
+    box-shadow:0 0 0 3px rgba(56,189,248,.15);
+
+}
+
+.content-section{
+
+    padding-bottom:60px;
+
+}
+
+/* ==========================================
+SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0F172A;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#334155;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#38BDF8;
+
+}
+
+/* ==========================================
+ANIMATIONS
+========================================== */
+
+.kpi-card,
+.action-card,
+.info-card,
+.document-card,
+.lesson-card,
+.timeline-content,
+.health-card{
+
+    transition:all .25s ease;
+
+}
+
+.kpi-card:hover,
+.action-card:hover,
+.info-card:hover,
+.document-card:hover,
+.lesson-card:hover,
+.timeline-content:hover,
+.health-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+/* ==========================================
+RESPONSIVE
+========================================== */
+
+@media(max-width:1200px){
+
+.health-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.health-circle{
+
+    width:180px;
+    height:180px;
+    font-size:46px;
+
+}
+
+}
+
+@media(max-width:992px){
+
+body{
+
+    overflow:auto;
+
+}
+
+.app-container{
+
+    flex-direction:column;
+
+}
+
+.sidebar{
+
+    width:100%;
+    height:auto;
+
+}
+
+.sidebar nav{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.main-content{
+
+    padding:25px;
+
+}
+
+.topbar{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.kpi-grid,
+.overview-grid,
+.document-grid,
+.action-grid,
+.pm-header,
+.check-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.topbar h2{
+
+    font-size:30px;
+
+}
+
+.brand{
+
+    text-align:center;
+
+}
+
+.brand i{
+
+    display:block;
+
+    margin:0 auto 15px;
+
+}
+
+.sidebar nav{
+
+    grid-template-columns:1fr;
+
+}
+
+.health-circle{
+
+    width:150px;
+    height:150px;
+    font-size:38px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.main-content{
+
+    padding:15px;
+
+}
+
+.kpi-value{
+
+    font-size:32px;
+
+}
+
+.summary-card,
+.pm-form,
+.health-card,
+.document-card,
+.lesson-card,
+.info-card{
+
+    padding:20px;
+
+}
+
+}
