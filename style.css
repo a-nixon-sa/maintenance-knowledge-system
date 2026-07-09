@@ -1106,69 +1106,35 @@ MOBILE
 
     }
 
+    .menu-toggle{
+
+        display:block;
+
+    }
+
     .sidebar{
 
-        width:100%;
-
-        border-right:none;
-
-        border-bottom:1px solid var(--border);
-
-        position:sticky;
+        position:fixed;
 
         top:0;
 
-        z-index:999;
+        left:-300px;
+
+        width:280px;
+
+        height:100vh;
+
+        transition:.3s;
+
+        z-index:2000;
+
+        border-right:1px solid var(--border);
 
     }
 
-    .brand{
+    .sidebar.open{
 
-        padding:18px;
-
-    }
-
-    .brand h1{
-
-        font-size:24px;
-
-    }
-
-    .brand p{
-
-        font-size:13px;
-
-    }
-
-    .sidebar nav{
-
-        display:flex;
-
-        flex-wrap:nowrap;
-
-        overflow-x:auto;
-
-        gap:10px;
-
-        padding:15px;
-
-        scrollbar-width:none;
-
-    }
-
-    .sidebar nav::-webkit-scrollbar{
-
-        display:none;
-
-    }
-
-    .nav-button{
-
-        flex:0 0 auto;
-
-        min-width:170px;
-
-        text-align:center;
+        left:0;
 
     }
 
@@ -1180,11 +1146,19 @@ MOBILE
 
     .topbar{
 
-        flex-direction:column;
+        display:grid;
 
-        align-items:flex-start;
+        grid-template-columns:auto 1fr;
 
-        gap:15px;
+        gap:20px;
+
+        align-items:center;
+
+    }
+
+    .machine-status{
+
+        grid-column:1 / -1;
 
     }
 
@@ -1209,8 +1183,6 @@ MOBILE
         font-size:38px;
 
     }
-
-}
 
 /* =====================================================
 SMALL PHONES
