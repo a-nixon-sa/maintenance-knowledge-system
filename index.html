@@ -415,7 +415,9 @@
 
             <h2>Maintenance History</h2>
 
-            <div class="timeline">
+            <div
+                id="historyTimeline"
+                class="timeline">
 
                 <div class="timeline-item">
 
@@ -503,8 +505,10 @@
 
                         <label>Technician</label>
 
-                        <input type="text"
-                               placeholder="Enter technician name">
+                        <input
+                            type="text"
+                            id="technician"
+                            placeholder="Enter technician name">
 
                     </div>
 
@@ -512,7 +516,9 @@
 
                         <label>Date</label>
 
-                        <input type="date">
+                        <input
+                            type="date"
+                            id="pmDate">
 
                     </div>
 
@@ -520,7 +526,7 @@
 
                         <label>Shift</label>
 
-                        <select>
+                        <select id="shift">
 
                             <option>Day Shift</option>
                             <option>Night Shift</option>
@@ -603,12 +609,16 @@
 
                 <h3>Technician Notes</h3>
 
-                <textarea rows="6"
-                    placeholder="Enter inspection notes, observations, or recommended repairs..."></textarea>
+                <textarea
+                      id="notes"
+                      rows="6"
+                      placeholder="Enter inspection notes, observations, or recommended repairs..."></textarea>
 
                 <br><br>
 
-                <button class="save-button">
+                <button
+                    id="savePM"
+                    class="save-button">
 
                     <i class="fa-solid fa-floppy-disk"></i>
 
