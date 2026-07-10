@@ -233,4 +233,6 @@ if (saveButton) {
 
      });
 
+   renderHistory();
+
 });
