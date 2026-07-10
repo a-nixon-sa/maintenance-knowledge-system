@@ -18,6 +18,67 @@ const shiftInput = document.getElementById("shift");
 const notesInput = document.getElementById("notes");
 
 const historyTimeline = document.getElementById("historyTimeline");
+
+   /* =====================================
+   Render Maintenance History
+===================================== */
+
+function renderHistory() {
+
+    if (!historyTimeline) return;
+
+    const history =
+        JSON.parse(localStorage.getItem("pmHistory")) || [];
+
+    historyTimeline.innerHTML = "";
+
+    history.forEach(record => {
+
+        const checks = record.checks.length
+            ? record.checks.map(item => `<li>✔ ${item}</li>`).join("")
+            : "<li>No checklist items completed.</li>";
+
+        const timelineItem = document.createElement("div");
+
+        timelineItem.className = "timeline-item";
+
+        timelineItem.innerHTML = `
+
+            <div class="timeline-date">
+
+                ${record.date}
+
+            </div>
+
+            <div class="timeline-content">
+
+                <h3>Preventive Maintenance Completed</h3>
+
+                <p><strong>Technician:</strong> ${record.technician}</p>
+
+                <p><strong>Team:</strong> ${record.team}</p>
+
+                <p><strong>Notes:</strong> ${record.notes || "None"}</p>
+
+                <br>
+
+                <strong>Completed Checklist</strong>
+
+                <ul>
+
+                    ${checks}
+
+                </ul>
+
+            </div>
+
+        `;
+
+        historyTimeline.appendChild(timelineItem);
+
+    });
+
+}
    
     const sections = document.querySelectorAll(".content-section");
 
@@ -67,15 +128,32 @@ if (saveButton) {
 
     saveButton.addEventListener("click", function () {
 
+        // Get every checked PM item
+        const completedChecks = [];
+
+        document.querySelectorAll(".pm-check").forEach(check => {
+
+            if (check.checked) {
+
+                completedChecks.push(
+                    check.parentElement.textContent.trim()
+                );
+
+            }
+
+        });
+
         const record = {
 
             technician: technicianInput.value,
 
             date: dateInput.value,
 
-            shift: shiftInput.value,
+            team: shiftInput.value,
 
-            notes: notesInput.value
+            notes: notesInput.value,
+
+            checks: completedChecks
 
         };
 
@@ -88,6 +166,22 @@ if (saveButton) {
             "pmHistory",
             JSON.stringify(history)
         );
+
+        renderHistory();
+
+        technicianInput.value = "";
+
+        dateInput.value = "";
+
+        shiftInput.value = "";
+
+        notesInput.value = "";
+
+        document.querySelectorAll(".pm-check").forEach(check => {
+
+            check.checked = false;
+
+        });
 
         alert("PM Record Saved!");
 
