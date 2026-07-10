@@ -79,7 +79,7 @@ MaintLink is a portfolio project created for educational and demonstration purpo
 
 Author
 
-Ali Nixon
+Alison Nixon
 
 Associate of Applied Science in Computer Programming
 
