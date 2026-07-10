@@ -17,7 +17,7 @@ const shiftInput = document.getElementById("shift");
 
 const notesInput = document.getElementById("notes");
 
-const historyTimeline = document.getElementById("historyTimeline");
+const savedHistory = document.getElementById("savedHistory");
 
    /* =====================================
    Render Maintenance History
@@ -25,12 +25,12 @@ const historyTimeline = document.getElementById("historyTimeline");
 
 function renderHistory() {
 
-    if (!historyTimeline) return;
+    if (!savedHistory) return;
 
     const history =
         JSON.parse(localStorage.getItem("pmHistory")) || [];
 
-    historyTimeline.innerHTML = "";
+    savedHistory.innerHTML = "";
 
     history.forEach(record => {
 
@@ -74,7 +74,7 @@ function renderHistory() {
 
         `;
 
-        historyTimeline.appendChild(timelineItem);
+        savedHistory.appendChild(timelineItem);
 
     });
 
